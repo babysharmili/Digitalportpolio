@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio - Baby Sharmili B V</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(120deg, #4b0082, #dda0dd);
+            /* Purple gradient */
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(75, 0, 130, 0.8);
+            /* Dark purple */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid #ffff00;
+            /* Yellow accent */
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #ffff00;
+            /* Yellow */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            color: #f0e68c;
+            /* Light yellow */
+            margin-top: 0.5rem;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ffff00;
+            /* Yellow border */
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        nav {
+            background: #800080;
+            /* Purple */
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: #ffff00;
+            /* Yellow */
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #ffff00;
+            /* Yellow */
+            color: #4b0082;
+            /* Dark purple */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two-column layout */
+            gap: 2rem;
+        }
+
+        .section-content {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-content h2 {
+            font-size: 1.8rem;
+            color: #4b0082;
+            /* Dark purple */
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid #ffff00;
+            /* Yellow underline */
+            padding-bottom: 0.3rem;
+        }
+
+        .section-content p,
+        .section-content ul {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: #4b0082;
+            /* Dark purple */
+            color: #ffff00;
+            /* Yellow */
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: #ffff00;
+            /* Yellow */
+            color: #4b0082;
+            /* Dark purple */
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #800080;
+            /* Purple */
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #f0e68c;
+            /* Light yellow */
+            position: relative;
+            width: 100%;
+        }
+
+        /* Full-width sections */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="babysharmili.jpg" alt="Baby Sharmili's Profile Picture" class="profile-picture">
+            <h1>BABY SHARMILI B V</h1>
+            <p>I'm a B.Sc Computer Science Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section-content">
+            <h2>About Me</h2>
+            <p>I am a very active and enthusiastic individual when it comes to learning new things. As a simple girl, I
+                am well-educated and possess wisdom beyond my years. I’m a huge fan of BTS’s V and enjoy watching
+                Shinchan in my free time. I also love sleeping whenever I get the chance. My passion for learning drives
+                me to explore new technologies and ideas constantly.</p>
+        </section>
+
+        <section id="education" class="section-content">
+            <h2>Education</h2>
+            <p>Dr Ambedkar Govt College</p>
+        </section>
+
+        <section id="skills" class="section-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>CSS</li>
+                <li>PHP</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section-content">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="#">Digital Portfolio</a></li>
+            </ul>
+        </section>
+
+        <section id="resume" class="section-content full-width">
+            <h2>Resume</h2>
+            <center>
+                <a href="BABY SHARMILI.pdf" target="_blank"
+                    class="download-button">Download CV</a>
+            </center>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 BABY SHARMILI B V</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
