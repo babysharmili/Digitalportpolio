@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Portfolio - Baby Sharmili B V</title>
+    <title>Portfolio - Baby Sharmili B V </title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -10,62 +14,61 @@
         }
 
         body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(120deg, #4b0082, #dda0dd);
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background: rgba(75, 0, 130, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 2rem;
-            display: flex; /* Use flexbox for layout */
-            justify-content: space-between; /* Space between title and image */
-            align-items: center; /* Vertically center content */
-            border-bottom: 5px solid #ffff00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid #ff6f61;
             position: relative;
         }
 
         .header-content h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #ffff00;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ff6f61;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(255, 111, 97, 0.5);
         }
 
         .header-content p {
-            font-size: 1.1rem;
-            color: #f0e68c;
+            font-size: 1.2rem;
+            color: #ffd700;
             margin-top: 0.5rem;
         }
 
         .profile-picture {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 4px solid #ffff00;
+            border: 4px solid #ff6f61;
             object-fit: cover;
-            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
-            transition: transform 0.3s ease;
-            position: static; /* Remove absolute positioning */
-            transform: none; /* Remove transform */
+            box-shadow: 0 0 20px rgba(255, 111, 97, 0.6);
+            transition: transform 0.4s ease;
         }
 
         .profile-picture:hover {
-            transform: scale(1.1); /* Adjust hover effect */
+            transform: scale(1.15) rotate(5deg);
         }
 
-        /* Rest of your CSS remains the same */
         nav {
-            background: #800080;
+            background: #2d2d2d;
             padding: 1rem;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         nav ul {
@@ -74,91 +77,107 @@
 
         nav ul li {
             display: inline-block;
-            margin: 0 25px;
+            margin: 0 30px;
         }
 
         nav ul li a {
-            color: #ffff00;
+            color: #ffd700;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: background 0.3s ease, color 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: #ffff00;
-            color: #4b0082;
+            background: #ff6f61;
+            color: #fff;
+            transform: scale(1.1);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
+            position: relative;
+            perspective: 1000px;
         }
 
         .section-content {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             color: #333;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.6s ease, opacity 0.4s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            backface-visibility: hidden;
         }
 
-        .section-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        .section-content.hidden {
+            transform: rotateY(90deg);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .section-content.visible {
+            transform: rotateY(0deg);
+            opacity: 1;
         }
 
         .section-content h2 {
-            font-size: 1.8rem;
-            color: #4b0082;
-            margin-bottom: 0.8rem;
-            border-bottom: 2px solid #ffff00;
-            padding-bottom: 0.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #ff6f61;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 0.5rem;
         }
 
         .section-content p,
         .section-content ul {
-            font-size: 1rem;
-            color: #555;
+            font-size: 1.1rem;
+            color: #444;
         }
 
         ul {
-            list-style-type: circle;
-            padding-left: 20px;
-            margin-top: 0.5rem;
+            list-style-type: square;
+            padding-left: 25px;
+            margin-top: 0.8rem;
         }
 
         .download-button {
             display: inline-block;
-            background: #4b0082;
-            color: #ffff00;
-            padding: 0.7rem 1.5rem;
+            background: #ff6f61;
+            color: #fff;
+            padding: 0.8rem 2rem;
             text-decoration: none;
-            font-size: 1rem;
-            border-radius: 25px;
-            margin-top: 1rem;
-            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
         }
 
         .download-button:hover {
-            background: #ffff00;
-            color: #4b0082;
-            transform: scale(1.05);
+            background: #ffd700;
+            color: #2d2d2d;
+            transform: scale(1.1);
         }
 
         footer {
-            background: #800080;
-            padding: 1rem;
+            background: #2d2d2d;
+            padding: 1.5rem;
             text-align: center;
-            font-size: 0.9rem;
-            color: #f0e68c;
+            font-size: 1rem;
+            color: #ffd700;
             position: relative;
             width: 100%;
         }
@@ -172,10 +191,10 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>BABY SHARMILI B V</h1>
+            <h1>BABY SHARMILI </h1>
             <p>I'm a B.Sc Computer Science Student</p>
         </div>
-        <img src="babysharmili.jpg" alt="Baby Sharmili's Profile Picture" class="profile-picture">
+        <img src="babysharmili.jpg" alt="Mohana's Profile Picture" class="profile-picture">
     </header>
 
     <nav>
@@ -189,20 +208,20 @@
     </nav>
 
     <div class="container">
-        <section id="about" class="section-content">
+        <section id="about" class="section-content visible">
             <h2>About Me</h2>
-            <p>I am a very active and enthusiastic individual when it comes to learning new things. As a simple girl, I
+            <p> I am a very active and enthusiastic individual when it comes to learning new things. As a simple girl, I
                 am well-educated and possess wisdom beyond my years. I’m a huge fan of Lord Muruga and enjoy watching
                 Shinchan in my free time. I also love sleeping whenever I get the chance. My passion for learning drives
                 me to explore new technologies and ideas constantly.</p>
         </section>
 
-        <section id="education" class="section-content">
+        <section id="education" class="section-content hidden">
             <h2>Education</h2>
             <p>Dr Ambedkar Govt College</p>
         </section>
 
-        <section id="skills" class="section-content">
+        <section id="skills" class="section-content hidden">
             <h2>Skills</h2>
             <ul>
                 <li>Python</li>
@@ -214,14 +233,14 @@
             </ul>
         </section>
 
-        <section id="projects" class="section-content">
+        <section id="projects" class="section-content hidden">
             <h2>Projects</h2>
             <ul>
-                <li><a href="#">Digital Portfolio</a></li>
+                <li><a href="https://babysharmili.github.io/Digitalportpolio/">Digital Portfolio</a></li>
             </ul>
         </section>
 
-        <section id="resume" class="section-content full-width">
+        <section id="resume" class="section-content hidden full-width">
             <h2>Resume</h2>
             <center>
                 <a href="BABY SHARMILI.pdf" target="_blank" class="download-button">Download CV</a>
@@ -230,23 +249,36 @@
     </div>
 
     <footer>
-        <p>© 2025 BABY SHARMILI B V</p>
+        <p>©COPY 2025 BABY SHARMILI</p>
     </footer>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
+        const sections = document.querySelectorAll('.section-content');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function showSection(targetId) {
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.classList.remove('hidden');
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                    section.classList.add('hidden');
                 }
             });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                showSection(targetId);
+            });
         });
+
+        // Initially show only the "About" section
+        showSection('about');
     </script>
 </body>
+
 </html>
